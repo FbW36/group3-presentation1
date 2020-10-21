@@ -188,9 +188,11 @@ console.log("logical not! ==> ", !(a3 > 0 || b3 > 0)); // false
 
 
 
+
+
 /*
 ======================
-//TODO (3) Strings — Amit
+TODO (3) Strings — Amit
 ======================
 */// 	- Strings and quotes
 // 	- Template Literals
@@ -225,6 +227,7 @@ console.log("str2Es6 ==>", str2Es6);
 
 
 
+
 /*
 ======================
 TODO Strings & Template Literals — Mohammed
@@ -248,7 +251,6 @@ let arrNumbers = [1, 2, 3];
 console.log(`The numbers array is ${arrNumbers}`);
 
 //* In methods a, and b we can not include variable or manipulate expression.
-
 
 
 
@@ -288,6 +290,8 @@ console.log("The length of the given string is ==>", jsStringLen); // 11
 const arrColors = ["red", "white", "blue", "yellow", "green"];
 let arrColorsLen = arrColors.length;
 console.log("The length of the given array is ==>", arrColorsLen); // 5
+
+
 
 
 
@@ -365,6 +369,36 @@ let iAmNotAnItem2 = pokemonString2.lastIndexOf("blastoise");//You need to know w
 ======================
 */
 
+//includes() returns a boolean (true or false)
+//The value you’re checking in the string/array are case sensitve(uppercase and lowercase letters are treated as distinct.).
+//The value you’re checking in the string/array must be an exact match.
+//Store the response (true/false) as a variable
+
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+const word = 'fox';
+
+console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);
+// expected output: "The word "fox" is in the sentence"
+
+const toBeStr = 'To be, or not to be, that is the question.' 
+
+console.log(toBeStr.includes('To be'))        // true
+console.log(toBeStr.includes('question'))     // true
+console.log(toBeStr.includes('nonexistent'))  // false
+
+//Specify the first position to start searching
+console.log(toBeStr.includes('To be', 1))     // false
+
+//The value you’re checking in the string/array are case sensitve(uppercase and lowercase letters are treated as distinct.).
+console.log(toBeStr.includes('TO BE'))        // false
+
+console.log(toBeStr.includes(''))             // true
+
+
+
+
+
 /*
 ======================
 //* slice() — Adrian
@@ -406,6 +440,9 @@ const bothNegative1 = thisIsMyString.slice(-5, -13); // " "
 const clonedString = thisIsMyString.slice(); // This is a string, right here
 
 
+
+
+
 /*
 ======================
 //* split() — Olha
@@ -429,31 +466,27 @@ console.log(splitString); // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of
 // a pattern that describes where the splits should occur.
 // value — string or regular expression
 
-const splitString1 = someString.split(" "); // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of', 'words']
-const splitString2 = someString.split("s"); // [ '', 'ome ', 'tring that ha', ' a bunch of word', '' ]
-const splitString3 = someString.split(/ /); // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of', 'words']
-const splitString4 = someString.split("string"); // [ 'some ', ' that has a bunch of words' ]
-const splitString5 = someString.split(""); // [ 'some ', ' that has a bunch of words' ]
+const splitString1 = someString.split(" ");
+console.log("split by space as a string", splitString1); // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of', 'words']
 
-console.log("split by space as a string", splitString1);
-console.log("split by the letter 's'", splitString2);
-console.log("split by space as a regular expression", splitString3);
+const splitString2 = someString.split("s");
+console.log("split by the letter 's'", splitString2); // [ '', 'ome ', 'tring that ha', ' a bunch of word', '' ]
+
+const splitString3 = someString.split(/ /);
+console.log("split by space as a regular expression", splitString3); // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of', 'words']
+
+const splitString4 = someString.split("string");
 console.log("split by the word 'string'", splitString4); // split by the word 'string' [ 'some ', ' that has a bunch of words' ]
-console.log("split by the empty string", splitString5);
-/* [
-	's', 'o', 'm', 'e', ' ', 's', 't',
-	'r', 'i', 'n', 'g', ' ', 't', 'h',
-	'a', 't', ' ', 'h', 'a', 's', ' ',
-	'a', ' ', 'b', 'u', 'n', 'c', 'h',
-	' ', 'o', 'f', ' ', 'w', 'o', 'r',
-	'd', 's'
-] */
+
+const splitString5 = someString.split("");
+console.log("split by the empty string", splitString5); // split by the empty string [ 's', 'o', 'm', 'e', ' ', 's', 't', 'r', 'i', 'n', 'g', ' ', 't', 'h', 'a', 't', ' ', 'h', 'a', 's', ' ', 'a', ' ', 'b', 'u', 'n', 'c', 'h', ' ', 'o', 'f', ' ', 'w', 'o', 'r', 'd', 's']
 
 //* 2) limit
 // the number of substrings that the returned array will contain
 // value — number (non-negative integer)
 
 const splitString6 = someString.split(" ", 3);
-const splitString7 = someString.split(" ", 0);
 console.log("3 as the limit:", splitString6); // [ 'some', 'string', 'that' ]
+
+const splitString7 = someString.split(" ", 0);
 console.log("0 as the limit:", splitString7); // []
