@@ -30,7 +30,7 @@ TODO (1) Mathematical Expressions — Azael
 
 let parenthesis = (3 + 5) / 8;
 
-console.log("parenthesis :>> ", parenthesis);
+console.log("parenthesis :>> ", parenthesis); // parenthesis :>>  1
 
 // *For example:
 
@@ -40,7 +40,7 @@ let num1 = 3;
 let num2 = 8;
 let add = num1 + num2;
 
-console.log("add :>> ", add);
+console.log("add :>> ", add); // add :>>  11
 
 //? subtraction (-)
 
@@ -48,7 +48,7 @@ let num3 = 7;
 let num4 = 2;
 let sub = num3 - num4;
 
-console.log("sub :>> ", sub);
+console.log("sub :>> ", sub); // sub :>>  5
 
 //? multiplication (*)
 
@@ -56,14 +56,14 @@ let num5 = 11;
 let num6 = 6;
 let mul = num5 * num6;
 
-console.log("mul :>> ", mul);
+console.log("mul :>> ", mul); // mul :>>  66
 
 //? and division (/)
 let num7 = 3;
 let num8 = 8;
 let div = num7 / num8;
 
-console.log("div :>> ", div);
+console.log("div :>> ", div); // div :>>  0.375
 
 //? Remainder operator (%)  returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.
 
@@ -71,7 +71,7 @@ let num9 = -8;
 let num10 = 3;
 let rem = num9 % num10;
 
-console.log("rem :>> ", rem);
+console.log("rem :>> ", rem); // rem :>>  -2
 
 // ? Exponentiation operator (**)  returns the result of raising the first operand to the power of the second operand. It is equivalent to Math.pow
 
@@ -79,9 +79,13 @@ let num11 = 6;
 let num12 = 2;
 let exp = num11 ** num12;
 
-console.log("exp :>> ", exp);
+console.log("exp :>> ", exp); // exp :>>  36
 
 
+/// 
+
+console.log("5" - 5); // 0
+console.log(5 - "5"); // 0
 
 
 
@@ -160,7 +164,7 @@ console.log("mix2 ==> ", ("a" && "") || false || null); //null
 
 // Precedence of Logical Operators - Operator precedence determines the order in which operators are evaluated. Operators with higher precedence are evaluated first.
 
-// 3 + 4 * 5 // returns 23
+//* 3 + 4 * 5 // returns 23
 
 // The multiplication operator ("*") has higher precedence than the addition operator ("+") and thus will be evaluated first.
 
@@ -185,7 +189,7 @@ const a3 = 3;
 const b3 = -2;
 
 console.log("logical not! ==> ", !(a3 > 0 || b3 > 0)); // false
-
+console.log(!a3); // false
 
 
 
@@ -221,12 +225,12 @@ let name = "Alex";
 let city = "Berlin";
 let age = 20;
 let strEs6 = `hello my name is ${name}.I am ${age}. I live in ${city}.`;
-console.log("strEs6 ==>", strEs6);
+console.log("strEs6 ==>", strEs6); // strEs6 ==> hello my name is Alex.I am 20. I live in Berlin.
 let str2Es6 = `hello my name is ${name}.I am ${age * 2}. I live in ${city}.`;
-console.log("str2Es6 ==>", str2Es6);
+console.log("str2Es6 ==>", str2Es6); // str2Es6 ==> hello my name is Alex.I am 40. I live in Berlin.
 
-
-
+let x1 = 'It\'s alright.'; // using backslash to escape the single quotes
+console.log(x1); // It's alright.
 
 /*
 ======================
@@ -311,14 +315,14 @@ console.log("The length of the given array is ==>", arrColorsLen); // 5
 //searchvalue 	                      Required. The string to search for
 //start 	                          Optional. Default 0. At which position to start the search
 
-//                          string.indexOf(searchvalue, start)
+//*                          string.indexOf(searchvalue, start)
 
 /******************************************************************************** */
 
 //? Let's talk about indexOf() ===> 
 let pokemonString = "My favorite pokemon is pokemon No. 50 because he is the strongest pokemon";//This is your string!! 
 let whereIsThis = pokemonString.indexOf("pokemon");//You need to know where this word is ...
-console.log("The FIRST occurrence of your word is in => ", whereIsThis + " position")
+console.log("The FIRST occurrence of your word is in => ", whereIsThis + " position") // The FIRST occurrence of your word is in =>  12 position
 
 //The indexOf() method returns the position of the first occurrence of a specified value in a string.
 
@@ -343,7 +347,7 @@ console.log("The FIRST occurrence of your word is in => ", whereIsThis + " posit
 
 let pokemonString2 = "My favorite pokemon is pokemon No. 50 because he is the strongest pokemon ";//This is your string!! 
 let whereIsThis2 = pokemonString2.lastIndexOf("pokemon");//You need to know where this word is ...
-//console.log("The LAST occurrence of your word is in => ", whereIsThis2 + " position")
+console.log("The LAST occurrence of your word is in => ", whereIsThis2 + " position"); // The LAST occurrence of your word is in =>  66 position
 
 //The lastIndexOf() method returns the position of the LAST occurrence of a specified value in a string.
 
@@ -356,9 +360,12 @@ let whereIsThis2 = pokemonString2.lastIndexOf("pokemon");//You need to know wher
 //GETTING -1 as a result!!! 
 //let pokemonString = "My favorite pokemon is pokemon No. 50 because he is the strongest pokemon";//This is your string!! 
 let iAmNotAnItem = pokemonString.indexOf("pikachu");//You need to know where this word is ...
-//console.log("Is there a 'pikachu' inside my string? => ", iAmNotAnItem + " = there is not a pikachu there")
+console.log("Is there a 'pikachu' inside my string? => ", iAmNotAnItem + " = there is not a pikachu there");
+// Is there a 'pikachu' inside my string? =>  -1 = there is not a pikachu there
+
 let iAmNotAnItem2 = pokemonString2.lastIndexOf("blastoise");//You need to know where this word is ...
-//console.log("Is there a 'blastoise' inside my string? => ", iAmNotAnItem2 + " there is not a blastoise there")
+console.log("Is there a 'blastoise' inside my string? => ", iAmNotAnItem2 + " there is not a blastoise there");
+// Is there a 'blastoise' inside my string? =>  -1 there is not a blastoise there
 
 
 
@@ -453,8 +460,8 @@ const clonedString = thisIsMyString.slice(); // This is a string, right here
 
 let someString = "some string that has a bunch of words";
 
-//? 1. What does it do?
-// 1) divides a string into an ordered list list of substrings
+//? 1. .split() — What does it do?
+// 1) divides a string into an ordered list of substrings
 // 2) puts these strings into an array
 // 3) returns the array
 
@@ -492,3 +499,6 @@ console.log("3 as the limit:", splitString6); // [ 'some', 'string', 'that' ]
 
 const splitString7 = someString.split(" ", 0);
 console.log("0 as the limit:", splitString7); // []
+
+const splitString8 = someString.split(" ", -3); // is disregarded
+console.log(splitString8);  // ['some', 'string', 'that', 'has', 'a', 'bunch', 'of', 'words' ]
