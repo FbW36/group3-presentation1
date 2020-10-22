@@ -35,12 +35,12 @@ let str = "Java Script";
 
 //? B- surrounding string within single quotations
 // Example:
-let str = "Java Script";
+let str = 'Java Script';
 
 //? C- Using Template Literals
 // Template Literals also called "template strings" is a string with the ability to put variables and manipulate expressions inside it. Expressions if any are preceded with ampersand sign and surrounded by curly braces.
 
 // Example:
-console.log(`The numbers array is ${arrNumbers}`);
+console.log(`The numbers array is ${arColors}`);
 
 //* In methods a, and b we can not include variable or manipulate expression.
